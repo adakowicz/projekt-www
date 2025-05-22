@@ -138,7 +138,7 @@ tbody tr:hover {
     display: flex;
     justify-content:center;
     align-items: center;
-    height: 300px;
+    height: 400px;
 }
 #lewy {
     display:flex;
@@ -506,7 +506,6 @@ body.dark-mode button {
 body.dark-mode #miniatury {
     background-color: #3f468f;
 }
-
 body.dark-mode #toggle-dark-mode {
     height: 25px;
     width: 130px;
