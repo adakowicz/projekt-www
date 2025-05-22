@@ -134,41 +134,47 @@ tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-#galeria{
+#galeria {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
-#lewy, #srodkowy, #prawy {
-    display:flex;
-    justify-content:center;
+
+#lewy,
+#srodkowy,
+#prawy {
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: #bdbec7;
     height: 327px;
 }
 
-#lewy, #prawy {
+#lewy,
+#prawy {
     width: 15%;
 }
 
 #srodkowy {
     width: 70%;
 }
-#filtry{
+
+#filtry {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    margin:0px 10px;
+    margin: 0px 10px;
 }
 
 #button1 {
     background-color: #bdbec7;
     height: 25px;
-    width: 100px;
+    width: 170px;
     border-radius: 10%;
     color: rgb(44, 5, 121);
     font-size: 100%;
     margin: 10px;
+
 }
 
 #button2 {
@@ -179,6 +185,7 @@ tbody tr:hover {
     display: block;
 
 }
+
 #button {
     background-color: #bdbec7;
     color: rgb(44, 5, 121);
@@ -198,8 +205,9 @@ tbody tr:hover {
 #miniatury img {
     height: 70px;
     animation: miniaturyAnimacja 4s;
- 
+
 }
+
 /*elementy menu od lewej strony*/
 .menu {
     display: flex;
@@ -287,12 +295,18 @@ body.dark-mode button {
     background-color: #2a2b3a;
     color: #ffffff;
     height: 25px;
-    width: 100px;
+    width: 160px;
     border-radius: 10%;
     font-size: 100%;
-    margin: 10px;
+    margin: 5px;
 }
 
 body.dark-mode #miniatury {
     background-color: #3f468f;
+}
+
+body.dark-mode #toggle-dark-mode {
+    height: 25px;
+    width: 130px;
+    font-size: 13px;
 }

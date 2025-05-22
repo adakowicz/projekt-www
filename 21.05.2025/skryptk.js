@@ -3,16 +3,14 @@ const zdjecia = 4;
 
 function nastepne() {
     zdjecieIndex++;
-    if (zdjecieIndex > zdjecia) 
-    {
+    if (zdjecieIndex > zdjecia) {
         zdjecieIndex = 1;
     }
     aktualizacja();
 }
 function poprzednie() {
     zdjecieIndex--;
-    if (zdjecieIndex < 1) 
-    {
+    if (zdjecieIndex < 1) {
         zdjecieIndex = zdjecia;
     }
     aktualizacja();
@@ -20,7 +18,7 @@ function poprzednie() {
 
 function aktualizacja() {
     const zdjecieElement = document.querySelector("#srodkowy img");
-    zdjecieElement.src = "./kubki/zdj"+zdjecieIndex + ".jpg";
+    zdjecieElement.src = "./kubki/zdj" + zdjecieIndex + ".jpg";
 }
 
 function zastosuj() {
@@ -41,7 +39,7 @@ function zastosuj() {
     }
 
     img.style.filter = filterValue.trim();
-    
+
 }
 
 function kolorowy() {
@@ -54,5 +52,14 @@ function czarnobialy() {
     img.style.filter = 'grayscale(100%)';
 }
 
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
+
+// Przełączanie
+document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+});
 
 
