@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warsztaty</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="naglowek">
+        <h1>Formularz zgłoszeniowy</h1>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+        <section>
+            <h2>Warsztaty</h2>
+            <p>Oferujemy 2-godzinne zajęcia, na których stworzysz swój własny unikatowy projekt! Podczas warsztatów
+                malujemy wybrany przedmiot ceramiczny. Do wyboru (koszt warsztatów): kubki (70 zł), miski (120 zl),
+                talerze (150 zl) oraz dzbany (200 zl). Udzial w warsztatach bedzie mozliwy po wypelnieniu formularza.
+                Zapisz sie juz dzis!</p>
+        </section>
+
+        <section class="faq">
+            <h3>Najczęściej zadawane pytania (FAQ)</h3>
+            <details>
+                <summary>Jaki jest koszt warsztatów?</summary>
+                <p>Calkowity koszta warsztatów wynosi 70-200 zl w zależności od wybranego przedmiotu.</p>
+            </details>
+            <details>
+                <summary>Ile jest dostępnych miejsc?</summary>
+                <p>Grupy będą 6 osobowe.</p>
+            </details>
+            <details>
+                <summary>Kto będzie prowadził warsztaty?</summary>
+                <p>Warsztaty poprowadzą pracownicy naszej pracowni.</p>
+            </details>
+        </section>
+
+        <form action="https://httpbin.org/post" method="post" class="formularz">
+            <fieldset>
+                <legend>Dane osobowe</legend>
+                <div class="form-group">
+                    <label for="imie">Imię i </label>
+                    <label for="nazwisko">nazwisko: </label>
+                    <input type="text" id="imie" name="imię" required>
+                    <input type="text" id="nazwisko" name="nazwisko" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adres e-mail: </label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Numer telefonu: </label>
+                    <input type="tel" id="telefon" name="telefon" required>
+                </div>
+                <div class="form-group">
+                    <label for="data">Data urodzenia: </label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="plec">Płeć: </label>
+                    <input type="radio" name="gender" value="kobieta"> Kobieta
+                    <input type="radio" name="gender" value="mężczyzna"> Mężczyzna
+                    <input type="radio" name="gender" value="brak"> Nie podaję
+                </div>
+                <div class="form-group">
+                    <label for="zgoda"></label>
+                    <input type="checkbox" name="zgoda" value="zgoda" required> Wyrażam zgodę na przetwarzanie danych
+                    osobowych
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferencje</legend>
+                <div class="form-group">
+                    <label for="temat">Wybierz przedmiot warsztatów:</label>
+                    <select name="temat" id="temat">
+                        <option value="kubek">Kubek</option>
+                        <option value="miska">Miska</option>
+                        <option value="talerz">Talerz</option>
+                        <option value="dzbanek">Dzbanek</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="miasto">Miasto: </label>
+                    <select name="miasto" id="miasto">
+                        <option value="bialystok">Białystok</option>
+                        <option value="warszawa">Warszawa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pora">Preferowana pora dnia: </label>
+                    <input list="czasy" name="pora">
+                    <datalist id="czasy">
+                        <option value="Rano">
+                        <option value="Popołudnie">
+                        <option value="Wieczór">
+                    </datalist>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Uwagi</legend>
+                <div class="form-group">
+                    <label for="uwagi">Tutaj możesz wpisać dodatkowe informacje i uwagi: </label>
+                    <textarea name="uwagi" rows="4" cols="40"></textarea>
+                </div>
+            </fieldset>
+
+
+            <button type="submit">Wyślij</button>
+        </form>
+
+        <section>
+            <h2>Informacje kontaktowe</h2>
+            <adress>
+                <p>Anna Kowalska</p>
+                <p>e-mail: annakowalska@gmail.com</p>
+                <p>telefon: +48 123 456 789</p>
+            </adress>
+            <a>Serdecznie zapraszam do korespondencji!</a>
+        </section>
+
+
+
+    </main>
+
+    <footer class="stopka">
+        <a>&copy; 2025 Prawa zastrzeżone</a>
+    </footer>
+</body>
+
+</html>
