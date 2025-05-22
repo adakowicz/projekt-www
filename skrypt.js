@@ -40,3 +40,4 @@ function jasnosc() {
     const jasnoscValue = document.getElementById('jasnosc').value;
     img.style.filter = `brightness(${jasnoscValue}%)`;
 }
+
