@@ -6,52 +6,48 @@ const observer = new IntersectionObserver((elementy) => {
       }, index * 150);
       observer.unobserve(element.target);
     }
-  });
-}, {
-  threshold: 0.1
-});
+    if (negatyw) {
+        filterValue += 'invert(100%) ';
+    }
 
-document.querySelectorAll("section").forEach((sekcja) => {
-  observer.observe(sekcja);
-});
-  
-const przyciskTryb = document.getElementById("przycisk-dark-mode");
-const ikona = document.getElementById("ikona-trybu");
-
-function ustawIkone() {
-  if (document.body.classList.contains("dark-mode"))
-  {
-    ikona.textContent = "☀️"
-    przyciskTrybu.classList.remove("ksiezyc-style");
-  }
-  else
-  {
-    ikona.textContent = "🌙";
-    przyciskTrybu.classList.add("ksiezyc-style");
-  }
+    img.style.filter = filterValue.trim();
 }
 
-przyciskTryb.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+function kolorowy() {
+    const img = document.getElementById('2');
+    img.style.filter = 'none';
+}
 
-  const czyCiemny = document.body.classList.contains("dark-mode");
-  localStorage.setItem("darkMode", czyCiemny ? "prawda" : "falsz");
-  ustawIkone();
-});
+function czarnobialy() {
+    const img = document.getElementById('2');
+    img.style.filter = 'grayscale(100%)';
+}
 
-window.addEventListener("DOMContentLoaded", () => {
-  const zapisanyTryb = localStorage.getItem("darkMode");
+function przezroczystosc() {
+    const img = document.querySelector('#blok3 img');
+    const przezroczystoscValue = document.getElementById('przezroczystosc').value;
+    img.style.filter = `opacity(${przezroczystoscValue}%)`;
+}
 
-  if (zapisanyTryb == "prawda") 
-  {
-    document.body.classList.add("dark-mode");
-  }
-  else if (!zapisanyTryb)
-  {
-    const preferencjaCiemny = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (preferencjaCiemny)
-    {
-      document.body.classList.add("dark-mode");
+function jasnosc() {
+    const img = document.querySelector('#blok4 img');
+    const jasnoscValue = document.getElementById('jasnosc').value;
+    img.style.filter = `brightness(${jasnoscValue}%)`;
+}
+
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+// pobieramy z localStorage theme rodzaj dark/light
+const currentTheme = localStorage.getItem('theme');
+
+// jeżeli theme istnieje 
+if (currentTheme) {
+    // ustawiamy data-theme klasę w elemencie html data-theme="light"
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // jeżeli theme jest dark zmieniamy przełącznik a dokładnie checkbox na true
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
     }
   }
   ustawIkone ();
@@ -71,6 +67,14 @@ const observer2 = new IntersectionObserver((elementy2) => {
   threshold: 0.1
 });
 
-document.querySelectorAll("section").forEach((sekcja) => {
-  observer2.observe(sekcja);
-});
+document.querySelector('#progressbar').animate(
+    {
+        backgroundColor: ['red', 'darkred'],
+        transform: ['scaleX(0)', 'scaleX(1)'],
+    },
+    {
+        duration: 2500,
+        fill: 'forwards',
+        easing: 'linear',
+    }
+);
