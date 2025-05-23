@@ -68,7 +68,7 @@ const observer2 = new IntersectionObserver((elementy2) => {
     }
   });
 }, {
-  thresold: 0.1
+  threshold: 0.1
 });
 
 document.querySelectorAll("section").forEach((sekcja) => {
