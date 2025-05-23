@@ -1,65 +1,57 @@
 <!DOCTYPE html>
+
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
+    <title>Strona głowna</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+
     <header class="naglowek">
         <h1>Strona główna</h1>
     </header>
-
-    <nav class="menu"> 
+    <nav class="menu">
         <ul>
-            <li><a href="index.html" class="active">Strona główna</a></li>
+            <li><a href="index.html">Strona główna</a></li>
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
-            <li>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li><button id="przycisk-dark-mode" aria-label="Przełącz tryb ciemny">
-                <span id="ikona-trybu">🌙</span>
-            </button></li>
         </ul>
+        <br>
     </nav>
 
-    <main>
-        <div id="galeria">
-            <div id="lewy">
-                <section class="onas">
-                    <h2>O Nas</h2>
-                    <p>Jesteśmy pracownią ceramiczną z ponad 10 letnim stażem. Zawsze staramy się, aby nasze projekty były wyjątkowe i niepowtarzalne. Największą uwagę skupiamy na dokładności oraz jakości wykonania. Nasza wyobraźnia nie zna granic, więc jesteśmy w stanie wykonać każdy projekt jaki tylko sobie wymarzysz!</p>
-                    <p>Tutaj nas znajdziesz: </p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2394.618480355309!2d23.143896777229397!3d53.11704237222371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffbdf78ff563d%3A0x1d2b92941871862a!2sWydzia%C5%82%20Informatyki%20Politechniki%20Bia%C5%82ostockej!5e0!3m2!1spl!2spl!4v1747819573699!5m2!1spl!2spl"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </section>
-            </div>
-    
-            <div id="prawy">
-                <section class="wlascicielka">
-                    <h3>Poznaj mnie!</h3>
-                    <img src="ania.avif" width="300" height="200">
-                    <p>Cześć, nazywam sie Ania i od dziecka kocham malować. Kreatywność to moje drugie imię, dlatego postanowiłam stworzyć miejsce, w którym osoby podobne do mnie poczują się jak w domu. Moja praca to moja pasja, dlatego w każdy projekt wkładam całe swoje serce. Jestem samoukiem, a moja miłość do ceramiki zrodziła się już w czasach szkolnych, więc wybierając mnie wybierasz też doświadczenie, które nabywałam przez lata, a teraz chętnie podzielę się moją wiedzą. Jeśli tak jak ja kochasz sztukę to trafiłeś w idealne miejsce!</p>
-                </section>
-            </div>
-        </div>
+    <!--<div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>-->
 
-        <div id="opis">
-            <section class="pochodzenie">
-                <h4>Czym jest ceramika?</h4>
-                <p>Ceramika – w rozumieniu tradycyjnym, tworzywa i wyroby otrzymywane w wyniku wypalenia odpowiednio uformowanej gliny. Nazwa tych wyrobów wywodzi się z greckiego określenia κεραμικός (keramikos), które pochodzi z kolei od słowa κέραμος (keramos – ziemia, glina).
-                  Obecnie przez ceramikę rozumie się wszystkie tworzywa i wyroby nieorganiczno-niemetaliczne, w trakcie otrzymywania których istotnym procesem jest obróbka cieplna w temperaturze powyżej kilkuset stopni Celsjusza, np. spiekanie lub prażenie.
-                  Historia ceramiki sięga paleolitu. Najstarsze znalezione wyroby datuje się na 13 tys. lat p.n.e., szklane 5–6 tys. lat p.n.e., materiały wiążące (wapno, gips) używane są od 2–5 tys. lat. Na terenie Polski ceramika stosowana jest od ok. 7,5 tys. lat. </p>
-            </section>
-        </div>
-        
-    </main>
-    
+
+    <div id="lewy">
+        <section class="o nas">
+            <h2>O Nas</h2>
+            <a>!!!! mapka</a>
+        </section>
+    </div>
+
+    <div id="prawy">
+        <section class="wlascicielka">
+            <h3>Poznaj mnie!</h3>
+            <img src="ania.avif" width="400" height="200">
+            <p>Cześć, nazywam sie Ania i od dziecka kocham malować. ...</p>
+
+        </section>
+    </div>
+
     <footer class="stopka">
         <a>&copy; 2025 Prawa zastrzeżone</a>
     </footer>
-
-    <script src="skrypt.js"></script>
 </body>
+<script src="skrypt.js"></script>
 
 </html>
