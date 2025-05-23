@@ -271,8 +271,10 @@ body {
     transform: scale(1.1);
 }
 
-body.dark-mode #ikona-trybu {
+body.dark-mode #ikona-trybu::before {
     content: "☀️";
+    display: inline-block;
+    margin-right: 5px; /* Adjust spacing if needed */
 }
 
 body.dark-mode #przycisk-dark-mode {
