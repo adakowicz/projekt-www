@@ -41,7 +41,7 @@ function jasnosc() {
     img.style.filter = `brightness(${jasnoscValue}%)`;
 }
 
-
+/*
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 // pobieramy z localStorage theme rodzaj dark/light
 const currentTheme = localStorage.getItem('theme');
@@ -82,4 +82,4 @@ document.querySelector('#progressbar').animate(
         fill: 'forwards',
         easing: 'linear',
     }
-);
+);*/
