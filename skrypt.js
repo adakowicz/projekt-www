@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
   else if (!zapisanyTryb)
   {
     const preferencjaCiemny = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (preferowanyCiemny)
+    if (preferencjaCiemny)
     {
       document.body.classList.add("dark-mode");
     }
