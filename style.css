@@ -43,29 +43,71 @@ nav {
     border-radius: 10px;
 }
 
-nav ul {
-    list-style: none;
+nav.menu {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6e74b1;
+    padding: 10px 20px;
+    border-radius: 10px;
     flex-wrap: wrap;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+.linki-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 auto;
+    justify-content: center;
+    flex: 0 1 auto;
+    transform: translateX(85px);
 }
 
-nav ul li a {
+.linki-menu li a {
     color: white;
     text-decoration: none;
     padding: 8px 15px;
     transition: background 0.2s;
 }
 
-nav ul li a:hover {
+.linki-menu li a:hover {
     background-color: #353d7f;
     border-radius: 5px;
+}
+
+.przyciski-menu {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.przyciski-menu button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #e7e2e2;
+    color: #333;
+}
+
+.przyciski-menu button:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode .przyciski-menu button {
+    background-color: #444;
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 
@@ -161,10 +203,6 @@ iframe {
     margin-top: 15px;
 }
 
-.menu {
-    display: flex;
-}
-
 @media screen and (max-width: 479px) {
     nav ul {
         flex-direction: column;
@@ -185,6 +223,15 @@ iframe {
     #lewy, #prawy {
         width: 100%;
     }
+
+    nav.menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .przyciski-menu {
+        margin-top: 10px;
+    }
 }
 
 section {
@@ -201,4 +248,113 @@ section.visible {
 
 .menu {
     display: flex;
+    text-align: center;
+    justify-content: center;
 }
+
+body.dark-mode {
+    background-color: #1e1e2f;
+    color: #f1f1f1;
+}
+
+body.dark-mode header, body.dark-mode footer, body.dark-mode nav {
+    background-color: #2f2f4f;
+}
+
+body.dark-mode nav ul li a {
+    color: #f1f1f1;
+}
+
+body.dark-mode a {
+    color: #ccc;
+}
+
+body.dark-mode img {
+    border-color: #444;
+}
+
+body.dark-mode #opis {
+    background-color: #2a2a40;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body.dark-mode #przycisk-dark-mode {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#toggle-dark-mode {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+#toggle-dark-mode:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode #ikona-trybu {
+    content: "☀️";
+}
+
+body.dark-mode #przycisk-dark-mode {
+    background-color: #444;
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #przycisk-dark-mode:hover {
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.15);
+}
+
+.ksiezyc-style {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+    font-size: 34px;
+    background-color: #f9f9f9;
+}
+
+#przycisk-powieksz {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    border: none;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#przycisk-powieksz:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode #przycisk-powieksz {
+    background-color: #444;
+    color: #f1f1f1;
+}
+

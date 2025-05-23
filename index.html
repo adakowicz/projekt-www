@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona główna</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,13 +14,17 @@
     </header>
 
     <nav class="menu"> 
-        <ul>
+        <ul class="linki-menu">
             <li><a href="index.html" class="active">Strona główna</a></li>
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="formularz">Formularz zgłoszeniowy</a></li>
-            <li>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li><button id="toggle-dark-mode">Tryb jasny/ciemny</button></li>
         </ul>
+        <div class="przyciski-menu">
+            <button id="przycisk-powieksz" aria-label="Powiększ tekst">🔍</button>
+            <button id="przycisk-dark-mode" aria-label="Przełącz tryb ciemny">
+                <span id="ikona-trybu">🌙</span>
+            </button>
+        </div>
     </nav>
 
     <main>
