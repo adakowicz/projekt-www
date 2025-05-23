@@ -1,67 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
     <link rel="stylesheet" href="style_galeria.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
-       <header id="top" class="naglowek">
-            <h1>Nasze prace</h1>
-        </header>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html" class="active">Strona główna</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
-                <li>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</li>
-                <li><button id="toggle-dark-mode">Tryb jasny/ciemny</button></li>
-            </ul>
-        </nav>
+    <header id="top" class="naglowek">
+        <h1>Nasze prace</h1>
+    </header>
 
-        <div id="filtry">
-            <button id="button1"><a href="galeria.html">Wszystkie</a></button>
-            <button id="button1"><a href="galeriak.html">Kubki</a></button> 
-            <button id="button1"><a href="galeriat.html">Talerze</a></button>
-            <button id="button1"><a href="galeriam.html">Miski</a></button>
+    <nav class="menu">
+        <ul class="linki-menu">
+            <li><a href="index.html" class="active">Strona główna</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="formularz">Formularz zgłoszeniowy</a></li>
+        </ul>
+        <div class="przyciski-menu">
+            <button id="toggle-dark-mode">Tryb jasny/ciemny</button>
         </div>
-        
+    </nav>
 
-       <div id="galeria">  
-            <div id="lewy">
-                <button id="button2" onclick="poprzednie()">&lt;</button>
-            </div>
+    <div id="filtry">
+        <button id="button1"><a href="galeria.html">Wszystkie</a></button>
+        <button id="button1"><a href="galeriak.html">Kubki</a></button>
+        <button id="button1"><a href="galeriat.html">Talerze</a></button>
+        <button id="button1"><a href="galeriam.html">Miski</a></button>
+    </div>
 
-            <div id="srodkowy">
-                <img src="zdj1.jpg" length="700" width="300" alt="Aktywne zdjęcie">
-            </div>
 
-            <div id="prawy">
-                <button id="button2" onclick="nastepne()">&gt;</button>
-            </div>
-        </div> 
-        
-        <div id="miniatury">
-            <img src="zdj1.jpg">
-            <img src="zdj2.jpg">
-            <img src="zdj3.jpg">
-            <img src="zdj4.jpg">
-            <img src="zdj5.jpg">
-            <img src="zdj6.jpg">
-            <img src="zdj7.jpg">
-            <img src="zdj8.jpg">
-            <img src="zdj9.jpg">
-            <img src="zdj10.jpg">
+    <div id="galeria">
+        <div id="lewy">
+            <button id="button2" onclick="poprzednie()">&lt;</button>
         </div>
 
-       
-        <script src="skrypt.js"></script>
+        <div id="srodkowy">
+            <img src="zdj1.jpg" length="700" width="300" alt="Aktywne zdjęcie">
+        </div>
+
+        <div id="prawy">
+            <button id="button2" onclick="nastepne()">&gt;</button>
+        </div>
+    </div>
+
+    <div id="miniatury">
+        <img src="zdj1.jpg">
+        <img src="zdj2.jpg">
+        <img src="zdj3.jpg">
+        <img src="zdj4.jpg">
+        <img src="zdj5.jpg">
+        <img src="zdj6.jpg">
+        <img src="zdj7.jpg">
+        <img src="zdj8.jpg">
+        <img src="zdj9.jpg">
+        <img src="zdj10.jpg">
+    </div>
+
+
+    <script src="skryptw.js"></script>
 
     <footer class="stopka">
         <a>&copy; 2025 Prawa zastrzeżone</a>
     </footer>
 </body>
-</html>
 
+</html>

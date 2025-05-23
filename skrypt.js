@@ -1,80 +1,86 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
+const observer = new IntersectionObserver((elementy) => {
+  elementy.forEach((element, index) => {
+    if (element.isIntersecting) {
       setTimeout(() => {
-        entry.target.classList.add("visible");
-      }, index * 150); // opóźnienie 150ms dla każdej kolejnej sekcji
-      observer.unobserve(entry.target); // zapobiega ponownemu wywołaniu
+        element.target.classList.add("visible");
+      }, index * 150);
+      observer.unobserve(element.target);
     }
   });
 }, {
   threshold: 0.1
 });
 
-document.querySelectorAll("section").forEach((section) => {
-  observer.observe(section);
+document.querySelectorAll("section").forEach((sekcja) => {
+  observer.observe(sekcja);
+});
+  
+const przyciskTryb = document.getElementById("przycisk-dark-mode");
+const ikona = document.getElementById("ikona-trybu");
+
+function ustawIkone() {
+  if (document.body.classList.contains("dark-mode"))
+  {
+    ikona.textContent = "☀️"
+    przyciskTrybu.classList.remove("ksiezyc-style");
+  }
+  else
+  {
+    ikona.textContent = "🌙";
+    przyciskTrybu.classList.add("ksiezyc-style");
+  }
+}
+
+przyciskTryb.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  const czyCiemny = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", czyCiemny ? "prawda" : "falsz");
+  ustawIkone();
 });
 
-let zdjecieIndex = 1;
-const zdjecia = 4;
+window.addEventListener("DOMContentLoaded", () => {
+  const zapisanyTryb = localStorage.getItem("darkMode");
 
-function nastepne() {
-  zdjecieIndex++;
-  if (zdjecieIndex > zdjecia) {
-    zdjecieIndex = 1;
+  if (zapisanyTryb == "prawda") 
+  {
+    document.body.classList.add("dark-mode");
   }
-  aktualizacja();
-}
-function poprzednie() {
-  zdjecieIndex--;
-  if (zdjecieIndex < 1) {
-    zdjecieIndex = zdjecia;
+  else if (!zapisanyTryb)
+  {
+    const preferencjaCiemny = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (preferowanyCiemny)
+    {
+      document.body.classList.add("dark-mode");
+    }
   }
-  aktualizacja();
-}
-
-function aktualizacja() {
-  const zdjecieElement = document.querySelector("#srodkowy img");
-  zdjecieElement.src = "./kubki/zdj" + zdjecieIndex + ".jpg";
-}
-
-function zastosuj() {
-  const blur = document.getElementById('blur').checked;
-  const sepia = document.getElementById('sepia').checked;
-  const negatyw = document.getElementById('negatyw').checked;
-
-  let filterValue = '';
-
-  if (blur) {
-    filterValue += 'blur(6px) ';
-  }
-  if (sepia) {
-    filterValue += 'sepia(100%) ';
-  }
-  if (negatyw) {
-    filterValue += 'invert(100%) ';
-  }
-
-  img.style.filter = filterValue.trim();
-
-}
-
-function kolorowy() {
-  const img = document.getElementById('2');
-  img.style.filter = 'none';
-}
-
-function czarnobialy() {
-  const img = document.getElementById('2');
-  img.style.filter = 'grayscale(100%)';
-}
-
-if (localStorage.getItem('darkMode') === 'true') {
-  document.body.classList.add('dark-mode');
-}
-
-// Przełączanie
-document.getElementById('toggle-dark-mode').addEventListener('click', function () {
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+  ustawIkone ();
 });
+
+const observer2 = new IntersectionObserver((elementy2) => {
+  elementy2.forEach((element2, index2) => {
+    if (entry.isInterscenting)
+    {
+      setTimeout(() => {
+        entry.target.classList.add("visible");
+      }, index*150 );
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  thresold: 0.1
+});
+
+document.querySelectorAll("section").forEach((sekcja) => {
+  observer2.observe(sekcja);
+});
+
+//powiekszanie tekstu
+const przyciskPowieksz = document.getElementById("przycisk-powieksz");
+let powiekszony = false;
+
+przyciskPowieksz.addEventListener("click", () => {
+  document.body.style.fontSize = powiekszony ? "16px" : "20px";
+  powiekszony = !powiekszony;
+});
+

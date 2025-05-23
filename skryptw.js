@@ -1,5 +1,5 @@
 let zdjecieIndex = 1;
-const zdjecia = 6;
+const zdjecia = 10;
 
 function nastepne() {
     zdjecieIndex++;
@@ -18,7 +18,7 @@ function poprzednie() {
 
 function aktualizacja() {
     const zdjecieElement = document.querySelector("#srodkowy img");
-    zdjecieElement.src = "./miski/zdj" + zdjecieIndex + ".jpg";
+    zdjecieElement.src = "zdj" + zdjecieIndex + ".jpg";
 }
 
 if (localStorage.getItem('darkMode') === 'true') {
@@ -30,3 +30,5 @@ document.getElementById('toggle-dark-mode').addEventListener('click', function (
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 });
+
+
