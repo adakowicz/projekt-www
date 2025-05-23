@@ -1,16 +1,10 @@
-function zastosuj() {
-    const img = document.getElementById('1');
-    const blur = document.getElementById('blur').checked;
-    const sepia = document.getElementById('sepia').checked;
-    const negatyw = document.getElementById('negatyw').checked;
-
-    let filterValue = '';
-
-    if (blur) {
-        filterValue += 'blur(6px) ';
-    }
-    if (sepia) {
-        filterValue += 'sepia(100%) ';
+const observer = new IntersectionObserver((elementy) => {
+  elementy.forEach((element, index) => {
+    if (element.isIntersecting) {
+      setTimeout(() => {
+        element.target.classList.add("visible");
+      }, index * 150);
+      observer.unobserve(element.target);
     }
     if (negatyw) {
         filterValue += 'invert(100%) ';
@@ -55,22 +49,23 @@ if (currentTheme) {
     if (currentTheme === 'dark') {
         toggleSwitch.checked = true;
     }
-}
+  }
+  ustawIkone ();
+});
 
-// funkcja ustawiająca data-theme w zależności od przełącznika
-function switchTheme(event) {
-    if (event.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+const observer2 = new IntersectionObserver((elementy2) => {
+  elementy2.forEach((element2, index2) => {
+    if (entry.isInterscenting)
+    {
+      setTimeout(() => {
+        entry.target.classList.add("visible");
+      }, index*150 );
+      observer.unobserve(entry.target);
     }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-// obserwujemy zdarzenie w naszym przypadku na change uruchamiamy funkcję switchTheme
-toggleSwitch.addEventListener('change', switchTheme, false);
+  });
+}, {
+  threshold: 0.1
+});
 
 document.querySelector('#progressbar').animate(
     {
