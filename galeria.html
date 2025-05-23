@@ -1,85 +1,67 @@
 <!DOCTYPE html>
-
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_galeria.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header id="top" class="naglowek">
-        <h1>Nasze prace</h1>
-    </header>
+       <header id="top" class="naglowek">
+            <h1>Nasze prace</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html" class="active">Strona główna</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
+                <li>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><button id="toggle-dark-mode">Tryb jasny/ciemny</button></li>
+            </ul>
+        </nav>
 
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html" class="active">Strona główna</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
-        </ul>
-    </nav>
+        <div id="filtry">
+            <button id="button1"><a href="galeria.html">Wszystkie</a></button>
+            <button id="button1"><a href="galeriak.html">Kubki</a></button> 
+            <button id="button1"><a href="galeriat.html">Talerze</a></button>
+            <button id="button1"><a href="galeriam.html">Miski</a></button>
+        </div>
+        
 
-    <main class="main">
+       <div id="galeria">  
+            <div id="lewy">
+                <button id="button2" onclick="poprzednie()">&lt;</button>
+            </div>
 
-        <div id="blok1">
-            <img src="zdj1.jpg" id="1" length="700" width="300"><br>
-            <label><input type="radio" name="efekt" value="blur" id="blur" name="blur"> Blur</label><br>
-            <label><input type="radio" name="efekt" value="sepia" id="sepia" name="sepia"> Sepia</label><br>
-            <label><input type="radio" name="efekt" value="negatyw" id="negatyw" name="negatyw"> Negatyw</label><br>
-            <button onclick="zastosuj()">Zastosuj</button>
+            <div id="srodkowy">
+                <img src="zdj1.jpg" length="700" width="300" alt="Aktywne zdjęcie">
+            </div>
+
+            <div id="prawy">
+                <button id="button2" onclick="nastepne()">&gt;</button>
+            </div>
+        </div> 
+        
+        <div id="miniatury">
+            <img src="zdj1.jpg">
+            <img src="zdj2.jpg">
+            <img src="zdj3.jpg">
+            <img src="zdj4.jpg">
+            <img src="zdj5.jpg">
+            <img src="zdj6.jpg">
+            <img src="zdj7.jpg">
+            <img src="zdj8.jpg">
+            <img src="zdj9.jpg">
+            <img src="zdj10.jpg">
         </div>
 
-        <div id="blok2">
-            <img src="zdj2.jpg" id="2" length="700" width="300"><br>
-            <button onclick="kolorowy()">Kolorowy</button>
-            <button onclick="czarnobialy()">Czarno-Biały</button>
-        </div>
-
-        <div id="blok3">
-            <img src="zdj3.jpg" length="700" width="300"><br>
-            <input type="range" min="0" max="100" value="100" id="przezroczystosc" name="przezroczystosc"><br>
-            <button onclick="przezroczystosc()">Zastosuj</button>
-        </div>
-
-        <div id="blok4">
-            <img src="zdj4.jpg" length="700" width="300"><br>
-            <input type="range" min="0" max="250" id="jasnosc" name="jasnosc"><br>
-            <button onclick="jasnosc()">Zastosuj</button>
-        </div>
-
-        <div id="blok5">
-            <img src="zdj5.jpg" length="700" width="300"><br>
-        </div>
-
-        <div id="blok6">
-            <img src="zdj6.jpg" length="700" width="300"><br>
-        </div>
-
-        <div id="blok7">
-            <img src="zdj7.jpg" length="700" width="300"><br>
-        </div>
-
-        <div id="blok8">
-            <img src="zdj8.jpg" length="700" width="300"><br>
-        </div>
-
-        <div id="blok9">
-            <img src="zdj9.jpg" length="700" width="300"><br>
-        </div>
-
-        <div id="blok10">
-            <img src="zdj10.jpg" length="700" width="300"><br>
-        </div>
-    </main>
+       
+        <script src="skrypt.js"></script>
 
     <footer class="stopka">
         <a>&copy; 2025 Prawa zastrzeżone</a>
     </footer>
 </body>
-<script src="skrypt.js"></script>
-
 </html>
+

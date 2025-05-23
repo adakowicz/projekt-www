@@ -1,85 +1,80 @@
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add("visible");
+      }, index * 150); // opóźnienie 150ms dla każdej kolejnej sekcji
+      observer.unobserve(entry.target); // zapobiega ponownemu wywołaniu
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll("section").forEach((section) => {
+  observer.observe(section);
+});
+
+let zdjecieIndex = 1;
+const zdjecia = 4;
+
+function nastepne() {
+  zdjecieIndex++;
+  if (zdjecieIndex > zdjecia) {
+    zdjecieIndex = 1;
+  }
+  aktualizacja();
+}
+function poprzednie() {
+  zdjecieIndex--;
+  if (zdjecieIndex < 1) {
+    zdjecieIndex = zdjecia;
+  }
+  aktualizacja();
+}
+
+function aktualizacja() {
+  const zdjecieElement = document.querySelector("#srodkowy img");
+  zdjecieElement.src = "./kubki/zdj" + zdjecieIndex + ".jpg";
+}
+
 function zastosuj() {
-    const img = document.getElementById('1');
-    const blur = document.getElementById('blur').checked;
-    const sepia = document.getElementById('sepia').checked;
-    const negatyw = document.getElementById('negatyw').checked;
+  const blur = document.getElementById('blur').checked;
+  const sepia = document.getElementById('sepia').checked;
+  const negatyw = document.getElementById('negatyw').checked;
 
-    let filterValue = '';
+  let filterValue = '';
 
-    if (blur) {
-        filterValue += 'blur(6px) ';
-    }
-    if (sepia) {
-        filterValue += 'sepia(100%) ';
-    }
-    if (negatyw) {
-        filterValue += 'invert(100%) ';
-    }
+  if (blur) {
+    filterValue += 'blur(6px) ';
+  }
+  if (sepia) {
+    filterValue += 'sepia(100%) ';
+  }
+  if (negatyw) {
+    filterValue += 'invert(100%) ';
+  }
 
-    img.style.filter = filterValue.trim();
+  img.style.filter = filterValue.trim();
+
 }
 
 function kolorowy() {
-    const img = document.getElementById('2');
-    img.style.filter = 'none';
+  const img = document.getElementById('2');
+  img.style.filter = 'none';
 }
 
 function czarnobialy() {
-    const img = document.getElementById('2');
-    img.style.filter = 'grayscale(100%)';
+  const img = document.getElementById('2');
+  img.style.filter = 'grayscale(100%)';
 }
 
-function przezroczystosc() {
-    const img = document.querySelector('#blok3 img');
-    const przezroczystoscValue = document.getElementById('przezroczystosc').value;
-    img.style.filter = `opacity(${przezroczystoscValue}%)`;
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark-mode');
 }
 
-function jasnosc() {
-    const img = document.querySelector('#blok4 img');
-    const jasnoscValue = document.getElementById('jasnosc').value;
-    img.style.filter = `brightness(${jasnoscValue}%)`;
-}
-
-/*
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-// pobieramy z localStorage theme rodzaj dark/light
-const currentTheme = localStorage.getItem('theme');
-
-// jeżeli theme istnieje 
-if (currentTheme) {
-    // ustawiamy data-theme klasę w elemencie html data-theme="light"
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    // jeżeli theme jest dark zmieniamy przełącznik a dokładnie checkbox na true
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
-}
-
-// funkcja ustawiająca data-theme w zależności od przełącznika
-function switchTheme(event) {
-    if (event.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-// obserwujemy zdarzenie w naszym przypadku na change uruchamiamy funkcję switchTheme
-toggleSwitch.addEventListener('change', switchTheme, false);
-
-document.querySelector('#progressbar').animate(
-    {
-        backgroundColor: ['red', 'darkred'],
-        transform: ['scaleX(0)', 'scaleX(1)'],
-    },
-    {
-        duration: 2500,
-        fill: 'forwards',
-        easing: 'linear',
-    }
-);*/
+// Przełączanie
+document.getElementById('toggle-dark-mode').addEventListener('click', function () {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+});
