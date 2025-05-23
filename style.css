@@ -87,7 +87,7 @@ section {
 
 h2,
 h3 {
-    color: #363434;
+    color: #a86d6d;
 }
 
 p {
@@ -270,7 +270,6 @@ details summary {
     }
 }
 
-/*
 @media screen and (min-width: 480px) {
     nav ul {
         flex-direction: row;
@@ -286,6 +285,22 @@ details summary {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
     }
+
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 7px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    border: 1px solid #e57373;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background: #fff;
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.08em;
+=======
 
     .theme-switch {
         display: inline-block;
