@@ -1,85 +1,112 @@
-function zastosuj() {
-    const img = document.getElementById('1');
-    const blur = document.getElementById('blur').checked;
-    const sepia = document.getElementById('sepia').checked;
-    const negatyw = document.getElementById('negatyw').checked;
-
-    let filterValue = '';
-
-    if (blur) {
-        filterValue += 'blur(6px) ';
+const observer = new IntersectionObserver((elementy) => {
+  elementy.forEach((element, index) => {
+    if (element.isIntersecting) {
+      setTimeout(() => {
+        element.target.classList.add("visible");
+      }, index * 150);
+      observer.unobserve(element.target);
     }
-    if (sepia) {
-        filterValue += 'sepia(100%) ';
-    }
-    if (negatyw) {
-        filterValue += 'invert(100%) ';
-    }
+  });
+}, {
+  threshold: 0.1
+});
 
-    img.style.filter = filterValue.trim();
+document.querySelectorAll("section").forEach((sekcja) => {
+  observer.observe(sekcja);
+});
+  
+const przyciskTryb = document.getElementById("przycisk-dark-mode");
+const ikona = document.getElementById("ikona-trybu");
+
+function ustawIkone() {
+  if (document.body.classList.contains("dark-mode"))
+  {
+    ikona.textContent = "☀️"
+    przyciskTrybu.classList.remove("ksiezyc-style");
+  }
+  else
+  {
+    ikona.textContent = "🌙";
+    przyciskTrybu.classList.add("ksiezyc-style");
+  }
 }
 
-function kolorowy() {
-    const img = document.getElementById('2');
-    img.style.filter = 'none';
-}
+przyciskTryb.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 
-function czarnobialy() {
-    const img = document.getElementById('2');
-    img.style.filter = 'grayscale(100%)';
-}
+  const czyCiemny = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", czyCiemny ? "prawda" : "falsz");
+  ustawIkone();
+});
 
-function przezroczystosc() {
-    const img = document.querySelector('#blok3 img');
-    const przezroczystoscValue = document.getElementById('przezroczystosc').value;
-    img.style.filter = `opacity(${przezroczystoscValue}%)`;
-}
+window.addEventListener("DOMContentLoaded", () => {
+  const zapisanyTryb = localStorage.getItem("darkMode");
 
-function jasnosc() {
-    const img = document.querySelector('#blok4 img');
-    const jasnoscValue = document.getElementById('jasnosc').value;
-    img.style.filter = `brightness(${jasnoscValue}%)`;
-}
-
-/*
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-// pobieramy z localStorage theme rodzaj dark/light
-const currentTheme = localStorage.getItem('theme');
-
-// jeżeli theme istnieje 
-if (currentTheme) {
-    // ustawiamy data-theme klasę w elemencie html data-theme="light"
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    // jeżeli theme jest dark zmieniamy przełącznik a dokładnie checkbox na true
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
-}
-
-// funkcja ustawiająca data-theme w zależności od przełącznika
-function switchTheme(event) {
-    if (event.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-// obserwujemy zdarzenie w naszym przypadku na change uruchamiamy funkcję switchTheme
-toggleSwitch.addEventListener('change', switchTheme, false);
-
-document.querySelector('#progressbar').animate(
+  if (zapisanyTryb == "prawda") 
+  {
+    document.body.classList.add("dark-mode");
+  }
+  else if (!zapisanyTryb)
+  {
+    const preferencjaCiemny = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (preferowanyCiemny)
     {
-        backgroundColor: ['red', 'darkred'],
-        transform: ['scaleX(0)', 'scaleX(1)'],
-    },
-    {
-        duration: 2500,
-        fill: 'forwards',
-        easing: 'linear',
+      document.body.classList.add("dark-mode");
     }
-);*/
+  }
+  ustawIkone ();
+});
+
+const observer2 = new IntersectionObserver((elementy2) => {
+  elementy2.forEach((element2, index2) => {
+    if (entry.isInterscenting)
+    {
+      setTimeout(() => {
+        entry.target.classList.add("visible");
+      }, index*150 );
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  thresold: 0.1
+});
+
+document.querySelectorAll("section").forEach((sekcja) => {
+  observer2.observe(sekcja);
+});
+
+//powiekszanie tekstu
+const przyciskPowieksz = document.getElementById("przycisk-powieksz");
+let powiekszony = false;
+
+przyciskPowieksz.addEventListener("click", () => {
+  document.body.style.fontSize = powiekszony ? "16px" : "20px";
+  powiekszony = !powiekszony;
+});
+
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+  let cname = name + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1);
+      if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
+  }
+  return "";
+}
+
+function saveDarkModePreference(isDark) {
+  setCookie("darkMode", isDark ? "1" : "0", 365);
+}
+
+function loadDarkModePreference() {
+  return getCookie("darkMode") === "1";
+}

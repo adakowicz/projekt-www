@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzbanki</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="naglowek">
+        <h1>Nasze dzbanki</h1>
+    </header>
+
+    <nav class="menu">
+        <ul class="linki-menu">
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
+            <li><a href="dzbanki.html" >Dzbanki</a></li>
+        </ul>
+        <div class="przyciski-menu">
+            <button id="przycisk-powieksz" aria-label="Powiększ tekst">🔍</button>
+            <button id="przycisk-dark-mode" aria-label="Przełącz tryb ciemny">
+                <span id="ikona-trybu">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Dzbanki zmieniające kolor</h2>
+            <p>Kliknij na dzbanek, aby zmienić jego kolor!</p>
+            <div style="display: flex; justify-content: center; gap: 40px; margin: 40px 0;">
+                <div class="dzbanek" onclick="zmienKolor(this)"></div>
+                <div class="dzbanek" onclick="zmienKolor(this)"></div>
+                <div class="dzbanek" onclick="zmienKolor(this)"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="stopka">
+        <a href="cookies.html">Polityka cookies</a> | <a>&copy; 2025 Prawa zastrzeżone</a>
+    </footer>
+    
+
+    <script src="dzbanki.js"></script>
+    <script src="skrypt.js"></script>
+</body>
+</html>
