@@ -358,3 +358,16 @@ body.dark-mode #przycisk-powieksz {
     color: #f1f1f1;
 }
 
+.dzbanek {
+    width: 100px;
+    height: 150px;
+    background: #a0c4ff;
+    border-radius: 50px 50px 40px 40px / 80px 80px 60px 60px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: background 0.4s;
+    border: 4px solid #333;
+    margin: 20px auto;
+    display: block;
+  }
+  
