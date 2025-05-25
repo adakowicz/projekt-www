@@ -1,0 +1,88 @@
+{
+  "prace": [
+    {
+      "id": 1,
+      "obraz": "kubki//zdj1.jpg",
+      "tytul": "Zdjęcie 1",
+      "opis": "Opis zdjęcia 1"
+    },
+    {
+      "id": 2,
+      "obraz": "kubki/zdj2.jpg",
+      "tytul": "Zdjęcie 2",
+      "opis": "Opis zdjęcia 2"
+    },
+    {
+      "id": 3,
+      "obraz": "kubki/zdj3.jpg",
+      "tytul": "Zdjęcie 3",
+      "opis": "Opis zdjęcia 3"
+    },
+    {
+      "id": 4,
+      "obraz": "kubki/zdj4.jpg",
+      "tytul": "Zdjęcie 4",
+      "opis": "Opis zdjęcia 4"
+    },
+    {
+      "id": 5,
+      "obraz": "miski/zdj1.jpg",
+      "tytul": "Zdjęcie 5",
+      "opis": "Opis zdjęcia 5"
+    },
+    {
+      "id": 6,
+      "obraz": "miski/zdj2.jpg",
+      "tytul": "Zdjęcie 6",
+      "opis": "Opis zdjęcia 6"
+    },
+    {
+      "id": 7,
+      "obraz": "miski/zdj3.jpg",
+      "tytul": "Zdjęcie 7",
+      "opis": "Opis zdjęcia 7"
+    },
+    {
+      "id": 8,
+      "obraz": "miski/zdj4.jpg",
+      "tytul": "Zdjęcie 8",
+      "opis": "Opis zdjęcia 8"
+    },
+    {
+      "id": 9,
+      "obraz": "miski/zdj5.jpg",
+      "tytul": "Zdjęcie 9",
+      "opis": "Opis zdjęcia 9"
+    },
+    {
+      "id": 10,
+      "obraz": "miski/zdj6.jpg",
+      "tytul": "Zdjęcie 10",
+      "opis": "Opis zdjęcia 10"
+    },
+    {
+      "id": 11,
+      "obraz": "talerze/zdj1.jpg",
+      "tytul": "Kubek 1",
+      "opis": "Opis kubka 1"
+    },
+    {
+      "id": 12,
+      "obraz": "talerze/zdj2.jpg",
+      "tytul": "Kubek 2",
+      "opis": "Opis kubka 2"
+    },
+    {
+      "id": 13,
+      "obraz": "talerze/zdj3.jpg",
+      "tytul": "Kubek 3",
+      "opis": "Opis kubka 3"
+    },
+    {
+      "id": 14,
+      "obraz": "talerze/zdj4.jpg",
+      "tytul": "Kubek 4",
+      "opis": "Opis kubka 4"
+    }
+  ]
+}

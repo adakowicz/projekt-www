@@ -361,13 +361,64 @@ body.dark-mode #przycisk-powieksz {
 .dzbanek {
     width: 100px;
     height: 150px;
-    background: #a0c4ff;
-    border-radius: 50px 50px 40px 40px / 80px 80px 60px 60px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: background 0.4s;
+    position: relative;
+    overflow: visible;
+    background: linear-gradient(160deg, #b3d0ff 60%, #7fa8d6 100%);
+    border-radius: 55% 55% 45% 45% / 80% 80% 60% 60%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25), inset 0 2px 16px #fff8;
     border: 4px solid #333;
     margin: 20px auto;
     display: block;
-  }
-  
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Pokrywka dzbanka */
+.dzbanek .pokrywka {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 28px;
+    background: linear-gradient(180deg, #e0e6ef 70%, #b3b3b3 100%);
+    border-radius: 50% 50% 40% 40% / 80% 80% 60% 60%;
+    border: 3px solid #333;
+    border-bottom: none;
+    z-index: 3;
+    box-shadow: 0 2px 8px #8885;
+}
+
+/* Uchwyt pokrywki */
+.dzbanek .uchwyt {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: #b3b3b3;
+    border-radius: 50%;
+    border: 2px solid #333;
+    z-index: 4;
+    box-shadow: 0 1px 4px #8885;
+}
+
+/* Owalny */
+.dzbanek[data-rodzaj="oval"] {
+    border-radius: 60% 60% 60% 60% / 90% 90% 80% 80%;
+}
+
+/* Okrągły */
+.dzbanek[data-rodzaj="round"] {
+    border-radius: 50% / 50%;
+}
+
+/* Wysoki */
+.dzbanek[data-rodzaj="tall"] {
+    border-radius: 40% 40% 30% 30% / 100% 100% 40% 40%;
+}
+
+/* Smukły */
+.dzbanek[data-rodzaj="slim"] {
+    border-radius: 60% 60% 30% 30% / 100% 100% 40% 40%;
+}
