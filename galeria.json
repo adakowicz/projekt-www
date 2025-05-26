@@ -3,86 +3,86 @@
     {
       "id": 1,
       "obraz": "kubki//zdj1.jpg",
-      "tytul": "Zdjęcie 1",
-      "opis": "Opis zdjęcia 1"
+      "tytul": "Kubek 1",
+      "opis": "Kubek 1"
     },
     {
       "id": 2,
       "obraz": "kubki/zdj2.jpg",
-      "tytul": "Zdjęcie 2",
-      "opis": "Opis zdjęcia 2"
+      "tytul": "Kubek 2",
+      "opis": "Kubek 2"
     },
     {
       "id": 3,
       "obraz": "kubki/zdj3.jpg",
-      "tytul": "Zdjęcie 3",
-      "opis": "Opis zdjęcia 3"
+      "tytul": "Kubek 3",
+      "opis": "Kubek 3"
     },
     {
       "id": 4,
       "obraz": "kubki/zdj4.jpg",
-      "tytul": "Zdjęcie 4",
-      "opis": "Opis zdjęcia 4"
+      "tytul": "Kubek 4",
+      "opis": "Kubek 4"
     },
     {
       "id": 5,
       "obraz": "miski/zdj1.jpg",
-      "tytul": "Zdjęcie 5",
-      "opis": "Opis zdjęcia 5"
+      "tytul": "Miska 1",
+      "opis": "Miska 1"
     },
     {
       "id": 6,
       "obraz": "miski/zdj2.jpg",
-      "tytul": "Zdjęcie 6",
-      "opis": "Opis zdjęcia 6"
+      "tytul": "Miska 2",
+      "opis": "Miska 2"
     },
     {
       "id": 7,
       "obraz": "miski/zdj3.jpg",
-      "tytul": "Zdjęcie 7",
-      "opis": "Opis zdjęcia 7"
+      "tytul": "Miska 3",
+      "opis": "Miska 3"
     },
     {
       "id": 8,
       "obraz": "miski/zdj4.jpg",
-      "tytul": "Zdjęcie 8",
-      "opis": "Opis zdjęcia 8"
+      "tytul": "Miska 4",
+      "opis": "Miska 4"
     },
     {
       "id": 9,
       "obraz": "miski/zdj5.jpg",
-      "tytul": "Zdjęcie 9",
-      "opis": "Opis zdjęcia 9"
+      "tytul": "Miska 5",
+      "opis": "Miska 5"
     },
     {
       "id": 10,
       "obraz": "miski/zdj6.jpg",
-      "tytul": "Zdjęcie 10",
-      "opis": "Opis zdjęcia 10"
+      "tytul": "Miska 6",
+      "opis": "Miska 6"
     },
     {
       "id": 11,
       "obraz": "talerze/zdj1.jpg",
-      "tytul": "Kubek 1",
-      "opis": "Opis kubka 1"
+      "tytul": "Talerz 1",
+      "opis": "Talerz 1"
     },
     {
       "id": 12,
       "obraz": "talerze/zdj2.jpg",
-      "tytul": "Kubek 2",
-      "opis": "Opis kubka 2"
+      "tytul": "Talerz 2",
+      "opis": "Talerz 2"
     },
     {
       "id": 13,
       "obraz": "talerze/zdj3.jpg",
-      "tytul": "Kubek 3",
-      "opis": "Opis kubka 3"
+      "tytul": "Talerz 3",
+      "opis": "Talerz 3"
     },
     {
       "id": 14,
       "obraz": "talerze/zdj4.jpg",
-      "tytul": "Kubek 4",
-      "opis": "Opis kubka 4"
+      "tytul": "Talerz 4",
+      "opis": "Talerz 4"
     }
   ]
 }
