@@ -319,3 +319,9 @@ header.naglowek {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+body.dark-mode .opis,
+body.dark-mode .praca .opis,
+body.dark-mode .praca p {
+    color: #fff !important;
+}

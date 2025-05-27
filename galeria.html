@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
     <link rel="stylesheet" href="style_galeria.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,13 +13,19 @@
         <h1>Nasze prace</h1>
     </header>
 
-    <nav class="menu">
+    <nav class="menu"> 
         <ul class="linki-menu">
-            <li><a href="index.html">Strona główna</a></li>
-            <li><a href="galeria.html" class="active">Galeria</a></li>
+            <li><a href="index.html" class="active">Strona główna</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
             <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
-            <li><a href="dzbanki.html">Dzbanki</a></li>
+            <li><a href="dzbanki.html" >Dzbanki</a></li>
         </ul>
+        <div class="przyciski-menu">
+            <button id="przycisk-powieksz" aria-label="Powiększ tekst">🔍</button>
+            <button id="przycisk-dark-mode" aria-label="Przełącz tryb ciemny">
+                <span id="ikona-trybu">🌙</span>
+            </button>
+        </div>
     </nav>
 
     <div id="filtry">
@@ -35,5 +42,6 @@
     </footer>
 
     <script src="galeria.js"></script>
+    <script src="skrypt.js"></script>
 </body>
 </html>
