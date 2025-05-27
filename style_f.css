@@ -418,7 +418,7 @@ details summary {
         margin-bottom: 4vh;
         color: var(--secondary-color);
     }*/
-}
+
 
 
 /*elementy menu od lewej strony*/
@@ -510,4 +510,70 @@ body.dark-mode #toggle-dark-mode {
     height: 25px;
     width: 130px;
     font-size: 13px;
+}
+
+/* Poprawka widoczności tekstu formularza w trybie dark-mode */
+body.dark-mode form,
+body.dark-mode .formularz {
+    background-color: #23233a !important;
+    color: #fff !important;
+}
+
+body.dark-mode form label,
+body.dark-mode form legend,
+body.dark-mode .formularz label,
+body.dark-mode .formularz legend {
+    color: #b6aaff !important;
+}
+
+body.dark-mode form input,
+body.dark-mode form select,
+body.dark-mode form textarea,
+body.dark-mode .formularz input,
+body.dark-mode .formularz select,
+body.dark-mode .formularz textarea {
+    background-color: #2f2f4f !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode form input:focus,
+body.dark-mode form select:focus,
+body.dark-mode form textarea:focus,
+body.dark-mode .formularz input:focus,
+body.dark-mode .formularz select:focus,
+body.dark-mode .formularz textarea:focus {
+    background-color: #23233a !important;
+    border-color: #9282d7 !important;
+    color: #fff !important;
+}
+
+body.dark-mode form button,
+body.dark-mode .formularz button {
+    background-color: #444488 !important;
+    color: #fff !important;
+}
+
+body.dark-mode form button:hover,
+body.dark-mode .formularz button:hover {
+    background-color: #6e74b1 !important;
+}
+
+/* Tryb ciemny dla FAQ */
+body.dark-mode details {
+    background-color: #2f2f4f !important;
+    color: #fff !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode details[open] {
+    background-color: #23233a !important;
+}
+
+body.dark-mode details summary {
+    color: #b6aaff !important;
+}
+
+body.dark-mode details p {
+    color: #fff !important;
 }

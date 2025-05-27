@@ -39,3 +39,35 @@ function usunDane() {
     localStorage.removeItem('daneFormularza');
     alert('Wszystkie dane zostały usunięte z przeglądarki!');
 }
+
+
+//// walidacja formularza
+const form = document.getElementById('myForm');
+form.addEventListener('submit', function(e) {
+  let valid = true;
+
+
+  const email = document.getElementById('email');
+  const emailError = document.getElementById('emailError');
+  if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+    emailError.textContent = 'Podaj poprawny adres e-mail!';
+    valid = false;
+  } else {
+    emailError.textContent = '';
+  }
+
+
+  const name = document.getElementById('name');
+  const nameError = document.getElementById('nameError');
+  if (name.value.trim() === '') {
+    nameError.textContent = 'Imię jest wymagane!';
+    valid = false;
+  } else {
+    nameError.textContent = '';
+  }
+
+
+  if (!valid) {
+    e.preventDefault();
+  }
+});
