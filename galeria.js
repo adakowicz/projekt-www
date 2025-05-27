@@ -6,10 +6,10 @@ async function pobierzDaneGaleria() {
             throw new Error('Błąd podczas pobierania danych');
         }
         const dane = await response.json();
-        return dane.prace;
+        return dane.prace; 
     } catch (error) {
         console.error('Błąd:', error);
-        return [];
+        return []; 
     }
 }
 
@@ -22,9 +22,9 @@ function wyswietlGalerie(kategoria, dane) {
         ? dane
         : dane.filter(praca => {
 
-            const kategoriaPracy = praca.obraz.split('/')[0];
-            return kategoriaPracy === kategoria;
-        });
+              const kategoriaPracy = praca.obraz.split('/')[0];
+              return kategoriaPracy === kategoria;
+          });
 
 
     filtrowaneDane.forEach(praca => {
@@ -52,12 +52,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.querySelectorAll('#filtry button').forEach(button => {
         button.addEventListener('click', () => {
-            const kategoria = button.textContent.toLowerCase() === "wszystkie"
-                ? "wszystkie"
+            const kategoria = button.textContent.toLowerCase() === "wszystkie" 
+                ? "wszystkie" 
                 : button.textContent.toLowerCase();
             filtruj(kategoria, daneGaleria);
         });
     });
 });
-
-console.log("Hello, Node.js!");

@@ -14,18 +14,16 @@ const observer = new IntersectionObserver((elementy) => {
 document.querySelectorAll("section").forEach((sekcja) => {
   observer.observe(sekcja);
 });
-  
+
 const przyciskTryb = document.getElementById("przycisk-dark-mode");
 const ikona = document.getElementById("ikona-trybu");
 
 function ustawIkone() {
-  if (document.body.classList.contains("dark-mode"))
-  {
+  if (document.body.classList.contains("dark-mode")) {
     ikona.textContent = "☀️"
     przyciskTrybu.classList.remove("ksiezyc-style");
   }
-  else
-  {
+  else {
     ikona.textContent = "🌙";
     przyciskTrybu.classList.add("ksiezyc-style");
   }
@@ -42,28 +40,24 @@ przyciskTryb.addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => {
   const zapisanyTryb = localStorage.getItem("darkMode");
 
-  if (zapisanyTryb == "prawda") 
-  {
+  if (zapisanyTryb == "prawda") {
     document.body.classList.add("dark-mode");
   }
-  else if (!zapisanyTryb)
-  {
+  else if (!zapisanyTryb) {
     const preferencjaCiemny = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (preferowanyCiemny)
-    {
+    if (preferowanyCiemny) {
       document.body.classList.add("dark-mode");
     }
   }
-  ustawIkone ();
+  ustawIkone();
 });
 
 const observer2 = new IntersectionObserver((elementy2) => {
   elementy2.forEach((element2, index2) => {
-    if (entry.isInterscenting)
-    {
+    if (entry.isInterscenting) {
       setTimeout(() => {
         entry.target.classList.add("visible");
-      }, index*150 );
+      }, index * 150);
       observer.unobserve(entry.target);
     }
   });
@@ -75,7 +69,6 @@ document.querySelectorAll("section").forEach((sekcja) => {
   observer2.observe(sekcja);
 });
 
-//powiekszanie tekstu
 const przyciskPowieksz = document.getElementById("przycisk-powieksz");
 let powiekszony = false;
 
@@ -86,8 +79,8 @@ przyciskPowieksz.addEventListener("click", () => {
 
 function setCookie(name, value, days) {
   const d = new Date();
-  d.setTime(d.getTime() + (days*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
+  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
   document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
@@ -95,10 +88,10 @@ function getCookie(name) {
   let cname = name + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1);
-      if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1);
+    if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
   }
   return "";
 }
