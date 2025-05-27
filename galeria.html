@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
-    <link rel="stylesheet" href="style_galeria.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
@@ -19,53 +19,31 @@
             <li><a href="index.html" class="active">Strona główna</a></li>
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
+            <li><a href="dzbanki.html">Dzbanki</a></li>
         </ul>
         <div class="przyciski-menu">
-            <button id="toggle-dark-mode">Tryb jasny/ciemny</button>
+            <button id="przycisk-powieksz" aria-label="Powiększ tekst">🔍</button>
+            <button id="przycisk-dark-mode" aria-label="Przełącz tryb ciemny">
+                <span id="ikona-trybu">🌙</span>
+            </button>
         </div>
     </nav>
 
     <div id="filtry">
-        <button id="button1"><a href="galeria.html">Wszystkie</a></button>
-        <button id="button1"><a href="galeriak.html">Kubki</a></button>
-        <button id="button1"><a href="galeriat.html">Talerze</a></button>
-        <button id="button1"><a href="galeriam.html">Miski</a></button>
+        <button onclick="filtruj('wszystkie')">Wszystkie</button>
+        <button onclick="filtruj('kubki')">Kubki</button>
+        <button onclick="filtruj('miski')">Miski</button>
+        <button onclick="filtruj('talerze')">Talerze</button>
     </div>
 
-
-    <div id="galeria">
-        <div id="lewy">
-            <button id="button2" onclick="poprzednie()">&lt;</button>
-        </div>
-
-        <div id="srodkowy">
-            <img src="zdj1.jpg" length="700" width="300" alt="Aktywne zdjęcie">
-        </div>
-
-        <div id="prawy">
-            <button id="button2" onclick="nastepne()">&gt;</button>
-        </div>
-    </div>
-
-    <div id="miniatury">
-        <img src="zdj1.jpg">
-        <img src="zdj2.jpg">
-        <img src="zdj3.jpg">
-        <img src="zdj4.jpg">
-        <img src="zdj5.jpg">
-        <img src="zdj6.jpg">
-        <img src="zdj7.jpg">
-        <img src="zdj8.jpg">
-        <img src="zdj9.jpg">
-        <img src="zdj10.jpg">
-    </div>
-
-
-    <script src="skryptw.js"></script>
+    <div id="galeria"></div>
 
     <footer class="stopka">
-        <a>&copy; 2025 Prawa zastrzeżone</a>
+        <a href="cookies.html">Polityka cookies</a> | <a>&copy; 2025 Prawa zastrzeżone</a>
     </footer>
+
+    <script src="galeria.js"></script>
+    <script src="skrypt.js"></script>
 </body>
 
 </html>

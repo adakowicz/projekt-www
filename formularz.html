@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warsztaty</title>
     <link rel="stylesheet" href="style_f.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
@@ -15,12 +16,18 @@
     </header>
 
     <nav class="menu">
-        <ul>
-            <li><a href="index.html">Strona główna</a></li>
+        <ul class="linki-menu">
+            <li><a href="index.html" class="active">Strona główna</a></li>
             <li><a href="galeria.html">Galeria</a></li>
             <li><a href="formularz.html">Formularz zgłoszeniowy</a></li>
-            <li><a href="dzbanki.html">Dzbanki</a></li>
+            <li><a href="dzbanki.html" >Dzbanki</a></li>
         </ul>
+        <div class="przyciski-menu">
+            <button id="przycisk-powieksz" aria-label="Powiększ tekst">🔍</button>
+            <button id="przycisk-dark-mode" aria-label="Przełącz tryb ciemny">
+                <span id="ikona-trybu">🌙</span>
+            </button>
+        </div>
     </nav>
 
     <main class="main">
@@ -140,12 +147,12 @@
         <div id="wynik"></div>
         <button type="button" onclick="usunDane()">Usuń dane</button>
     </main>
-
+    <script src="skryptf.js"></script>
+    <script src="skrypt.js"></script>
     <footer class="stopka">
         <footer class="stopka">
             <a href="cookies.html">Polityka cookies</a> | <a>&copy; 2025 Prawa zastrzeżone</a>
-        </footer>
-        <script src="skryptf.js"></script>
+     </footer>
 </body>
 
 </html>
