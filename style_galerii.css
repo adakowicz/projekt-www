@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 body {
@@ -179,6 +179,38 @@ nav ul li a:hover {
 
 #filtry button:hover {
     background-color: #353d7f;
+}
+
+@media screen and (max-width: 479px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #galeria {
+        flex-direction: column;
+    }
+
+    #lewy,
+    #prawy {
+        width: 100%;
+    }
+
+    nav.menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .przyciski-menu {
+        margin-top: 10px;
+    }
 }
 
 /* darkmode*/
