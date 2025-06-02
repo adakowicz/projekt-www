@@ -37,6 +37,14 @@ przyciskTryb.addEventListener("click", () => {
   ustawIkone();
 });
 
+function saveDarkModePreference(isDark) {
+  setCookie("darkMode", isDark ? "1" : "0", 365);
+}
+
+function loadDarkModePreference() {
+  return getCookie("darkMode") === "1";
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const zapisanyTryb = localStorage.getItem("darkMode");
 
@@ -94,12 +102,4 @@ function getCookie(name) {
     if (c.indexOf(cname) == 0) return c.substring(cname.length, c.length);
   }
   return "";
-}
-
-function saveDarkModePreference(isDark) {
-  setCookie("darkMode", isDark ? "1" : "0", 365);
-}
-
-function loadDarkModePreference() {
-  return getCookie("darkMode") === "1";
 }

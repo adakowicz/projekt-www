@@ -1,49 +1,49 @@
 document.querySelector('form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    zapiszDoLocalStorage();
+  e.preventDefault();
+  zapiszDoLocalStorage();
 });
 
 function zapiszDoLocalStorage() {
-    const imie = document.getElementById('imie').value;
-    const nazwisko = document.getElementById('nazwisko').value;
-    const telefon = document.getElementById('telefon').value;
+  const imie = document.getElementById('imie').value;
+  const nazwisko = document.getElementById('nazwisko').value;
+  const telefon = document.getElementById('telefon').value;
 
-    let wszystkieDane = JSON.parse(localStorage.getItem('daneFormularza')) || [];
+  let wszystkieDane = JSON.parse(localStorage.getItem('daneFormularza')) || [];
 
-    wszystkieDane.push({
-        imie,
-        nazwisko,
-        telefon
-    });
+  wszystkieDane.push({
+    imie,
+    nazwisko,
+    telefon
+  });
 
-    localStorage.setItem('daneFormularza', JSON.stringify(wszystkieDane));
-    alert('Dane zostały zapisane w przeglądarce!');
+  localStorage.setItem('daneFormularza', JSON.stringify(wszystkieDane));
+  alert('Dane zostały zapisane w przeglądarce!');
 }
 
 function pokazDane() {
-    const wszystkieDane = JSON.parse(localStorage.getItem('daneFormularza')) || [];
-    const wynik = document.getElementById('wynik');
-    if (wszystkieDane.length && wynik) {
-        wynik.innerHTML = wszystkieDane.map((dane, i) =>
-            `<div>
+  const wszystkieDane = JSON.parse(localStorage.getItem('daneFormularza')) || [];
+  const wynik = document.getElementById('wynik');
+  if (wszystkieDane.length && wynik) {
+    wynik.innerHTML = wszystkieDane.map((dane, i) =>
+      `<div>
                 <strong>${i + 1})</strong><br>
                 ${dane.imie} ${dane.nazwisko}, tel: ${dane.telefon}
             </div>`
-        ).join('');
-    } else if (wynik) {
-        wynik.innerHTML = 'Brak zapisanych danych!';
-    }
+    ).join('');
+  } else if (wynik) {
+    wynik.innerHTML = 'Brak zapisanych danych!';
+  }
 }
 
 function usunDane() {
-    localStorage.removeItem('daneFormularza');
-    alert('Wszystkie dane zostały usunięte z przeglądarki!');
+  localStorage.removeItem('daneFormularza');
+  alert('Wszystkie dane zostały usunięte z przeglądarki!');
 }
 
 
-//// walidacja formularza
+// walidacja formularza
 const form = document.getElementById('myForm');
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
   let valid = true;
 
 

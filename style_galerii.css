@@ -181,21 +181,18 @@ nav ul li a:hover {
     background-color: #353d7f;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 1024px) {
+
+    body{
+        width: 100%;
+        height: auto;
+    }
+
     nav ul {
-        flex-direction: column;
+        width: 60%;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        gap: 10px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #galeria {
-        flex-direction: column;
     }
 
     #lewy,
@@ -203,13 +200,9 @@ nav ul li a:hover {
         width: 100%;
     }
 
-    nav.menu {
+    .menu {
         flex-direction: column;
         align-items: center;
-    }
-
-    .przyciski-menu {
-        margin-top: 10px;
     }
 }
 
